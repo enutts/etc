@@ -7,11 +7,9 @@ Plug 'junegunn/vim-journal'
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
 Plug 'vim-airline/vim-airline'
-Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 " Colors and some quality of life
-colorscheme nord
 syntax on
 set title
 set number relativenumber
@@ -45,5 +43,8 @@ nmap <leader><leader> :bprevious<CR>
 nmap \ <leader>q
 nmap <leader>w :TagbarToggle<CR>
 nmap <leader>g :Goyo<CR>
-nmap <leader>l :Limelight!!<CR>
 nmap <leader>n :noh<CR>
+map <C-h> <C-W>h
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-l> <C-W>l
