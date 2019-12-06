@@ -17,16 +17,10 @@ shopt -s globstar
 [ -x /usr/bin/lesspipe ] && eval "$( SHELL=/bin/sh lesspipe)"
 
 # prompt... obviously
-PS1=" \[\e[34m\][ \[\e[36m\]\W \[\e[34m\]]\[\e[36m\]\$ \[\e[00m\]"
+PS1="\n \[\e[34m\][ \[\e[36m\]\W \[\e[34m\]]\[\e[36m\]\$ \[\e[00m\]"
 
 # adding custom scripts directory
-export PATH="${PATH}:/home/eric/.scripts/"
-
-# adding rust bin directory
-export PATH="${PATH}:/home/eric/.cargo/bin"
-
-# creating gopath
-export GOPATH="/home/eric/code/go"
+export PATH="${PATH}:$HOME/.scripts/"
 
 # some quality of life
 alias vim="nvim"
