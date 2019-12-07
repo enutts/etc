@@ -6,4 +6,4 @@
 
 exec startx
 
-export PATH="$HOME/.cargo/bin:$PATH"
+EDITOR="nvim"
