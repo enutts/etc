@@ -11,8 +11,8 @@ else
     mv etc code
 fi
 
-mkdir -p Documents/dox
-mkdir Documents/data
+mkdir -p Documents/dox/
+mkdir Documents/data/
 mkdir .scripts
 
 # important directories
@@ -31,5 +31,3 @@ ln -s /home/$USER/code/etc/scripts/dwmbar.sh /home/$USER/.scripts/dwmbar
 ln -s /home/$USER/code/etc/scripts/codes.sh /home/$USER/.scripts/codes
 ln -s /home/$USER/code/etc/scripts/htops.sh /home/$USER/.scripts/htops
 ln -s /home/$USER/code/etc/scripts/pwrs.sh /home/$USER/.scripts/pwrs
-
-for $SCRIPTS in 
