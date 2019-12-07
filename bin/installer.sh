@@ -41,6 +41,7 @@ mkdir .scripts
 SCRIPTDIR=$HOME/.scripts/
 CODEDIR=$HOME/code/
 ETCDIR=$HOME/code/etc/
+SUCKDIR=$CODEDIR/suck
 DOXDIR=$HOME/Documents/dox/
 DATADIR=$HOME/Documents/data/
 
