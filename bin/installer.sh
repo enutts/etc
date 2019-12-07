@@ -4,7 +4,6 @@
 # Configure Directory Structure
 cd ~
 
-# should only proc on the first run
 echo -e "\n CHECKING DIRECTORY STRUCTURE \n"
 if [ -d $HOME/code/ ]; then
     if [ ! -d $HOME/code/etc/ ]; then
@@ -15,7 +14,6 @@ else
     mv etc code
 fi
 
-# check for suckless repos
 echo -e "\n CHECKING FOR SUCKLESS STUFF \n"
 if [ $HOME/code/suck ]; then
 	cd $HOME/code/suck
@@ -58,7 +56,7 @@ if [ ! -d $HOME/.scripts/ ]; then
     mkdir $HOME/.scripts
 fi
 
-# important directories
+# "important directories"
 SCRIPTDIR=$HOME/.scripts/
 CODEDIR=$HOME/code/
 ETCDIR=$HOME/code/etc/
@@ -66,14 +64,22 @@ SUCKDIR=$CODEDIR/suck
 DOXDIR=$HOME/Documents/dox/
 DATADIR=$HOME/Documents/data/
 
-# create symbolic links for important static files
 echo -e "\n CHECKING FOR BASH BUSINESS \n"
 if [ ! -f $HOME/.bashrc ]; then
     echo " -- SET UP BASHRC -- \n"
     ln -s $HOME/code/etc/bashrc $HOME/.bashrc
 fi
 
-# checks to see if links already exist before retrying
+echo -e "\n CHECKING FOR X STUFF \n"
+if [ ! -f $HOME/.xprofile ]; then
+    echo -e "\n -- SETTING UP XPROFILE \n"
+    ln -s $HOME/code/etc/xprofile $HOME/.xprofile
+fi
+if [ ! -f $HOME/.xinitrc ]; then
+    echo -e "\n -- SETTING UP XINITRC -- \n"
+    ln -s $HOME/code/etc/xinitrc $HOME/.xinitrc
+fi
+
 echo -e "\n CHECKING SETTING UP SUCKLESS SUCKLESS CONFIGS \n"
 if [ ! -f $SUCKDIR/dwm/config.h ]; then
 	echo -e " -- SET UP DWM CONFIG -- \n"
@@ -88,7 +94,6 @@ if [ ! -f $SUCKDIR/st/config.h ]; then
 	ln -s $HOME/code/etc/st.h $HOME/code/suck/st/config.h
 fi
 
-# neovim is bad
 echo -e "\n CHECKING TO SEE IF NEOVIM IS SET UP \n"
 if [ ! -d $HOME/.config/nvim ]; then
 	echo -e " -- SET UP NVIM LINK IN XDG_CONFIG_HOME -- \n"
