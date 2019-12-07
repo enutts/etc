@@ -72,7 +72,7 @@ fi
 
 echo -e "\n CHECKING FOR X STUFF \n"
 if [ ! -f $HOME/.xprofile ]; then
-    echo -e "\n -- SETTING UP XPROFILE \n"
+    echo -e "\n -- SETTING UP XPROFILE -- \n"
     ln -s $HOME/code/etc/xprofile $HOME/.xprofile
 fi
 if [ ! -f $HOME/.xinitrc ]; then
