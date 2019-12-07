@@ -4,6 +4,7 @@
 # Configure Directory Structure
 cd ~
 
+echo "\n CHECKING DIRECTORY STRUCTURE \n"
 if [ $HOME/code/ ]; then
     mv etc code
 else
@@ -12,15 +13,16 @@ else
 fi
 
 # check for suckless repos
+echo "\n CHECKING FOR SUCKLESS STUFF \n"
 if [ $HOME/code/suck ]; then
 	cd $HOME/code/suck
-	if [ ! dwm/ ]; then 
+	if [ ! -d dwm/ ]; then 
 		git clone https://git.suckless.org/dwm
 	fi
-	if [ ! st/ ]; then 
+	if [ ! -d st/ ]; then 
 		git clone https://git.suckless.org/st
 	fi
-	if [ ! dmenu/ ]; then 
+	if [ ! -d dmenu/ ]; then 
 		git clone https://git.suckless.org/dmenu
 	fi
 	cd $HOME
@@ -46,10 +48,20 @@ DOXDIR=$HOME/Documents/dox/
 DATADIR=$HOME/Documents/data/
 
 # create symbolic links for important static files
+echo "\n CHECKING FOR BASH BUSINESS \n"
 ln -s $HOME/code/etc/bashrc $HOME/.bashrc
-ln -s $HOME/code/etc/dwm.h $HOME/code/suck/dwm/config.h
-ln -s $HOME/code/etc/dmenu.h $HOME/code/suck/dmenu/config.h
-ln -s $HOME/code/etc/st.h $HOME/code/suck/st/config.h
+
+# checking to see if links already exist before retrying
+echo "\n CHECKING SETTING UP SUCKLESS SUCKLESS CONFIGS \n"
+if [ ! -f $SUCKDIR/dwm/config.h ]; then
+	ln -s $HOME/code/etc/dwm.h $HOME/code/suck/dwm/config.h
+fi
+if [ ! -f $SUCKDIR/dmenu/config.h ]; then
+	ln -s $HOME/code/etc/dmenu.h $HOME/code/suck/dmenu/config.h
+fi
+if [ ! -f $SUCKDIR/st/config.h ]; then
+	ln -s $HOME/code/etc/st.h $HOME/code/suck/st/config.h
+fi
 
 # for scripts
 # later this will be managed by file_manager.py
