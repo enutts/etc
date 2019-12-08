@@ -15,7 +15,7 @@ else
 fi
 
 echo -e "\n CHECKING FOR SUCKLESS STUFF \n"
-if [ $HOME/code/suck ]; then
+if [ -d $HOME/code/suck ]; then
 	cd $HOME/code/suck
 	if [ ! -d dwm/ ]; then 
         echo -e " -- DOWNLOADING DWM -- \n"
