@@ -79,7 +79,7 @@ if [ ! -f $HOME/.xinitrc ]; then
     ln -s $HOME/code/etc/xinitrc $HOME/.xinitrc
 fi
 
-echo -e "\n CHECKING SETTING UP SUCKLESS SUCKLESS CONFIGS \n"
+echo -e "\n CHECKING SUCKLESS SUCKLESS CONFIGS \n"
 if [ ! -f $SUCKDIR/dwm/config.h ]; then
 	echo -e " -- SETTING UP DWM CONFIG -- \n"
 	ln -s $HOME/code/etc/dwm.h $HOME/code/suck/dwm/config.h
