@@ -64,8 +64,9 @@ DOXDIR=$HOME/Documents/dox/
 DATADIR=$HOME/Documents/data/
 
 echo -e "\n CHECKING FOR BASH BUSINESS \n"
-if [ ! -f $HOME/.bashrc ]; then
-    echo " -- SETTING UP BASHRC -- \n"
+if [ ! -f $HOME/.bashrc_bak ]; then
+    echo -e " -- SETTING UP BASHRC -- \n"
+    mv $HOME/.bashrc $HOME/.bashrc_bak
     ln -s $HOME/code/etc/bashrc $HOME/.bashrc
 fi
 
