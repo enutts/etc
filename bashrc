@@ -4,7 +4,7 @@
 
 # ye ole history shtuff
 shopt -s histappend
-HISTFILE=1000
+HISTFILE=$HOME/.bash_history
 HISTFILESIZE=2000
 
 # windowsize stuff, might be outdated
@@ -17,7 +17,7 @@ shopt -s globstar
 [ -x /usr/bin/lesspipe ] && eval "$( SHELL=/bin/sh lesspipe)"
 
 # prompt... obviously
-PS1="\n \[\e[34m\][ \[\e[36m\]\W \[\e[34m\]]\[\e[36m\]\$ \[\e[00m\]"
+PS1="\n \[\e[34m\][ \[\e[36m\]\u : \h : \W \[\e[34m\]] \n \[\e[36m\]\$ \[\e[00m\]"
 
 # adding custom scripts directory
 export PATH="${PATH}:$HOME/.scripts/"
