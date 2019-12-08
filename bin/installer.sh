@@ -32,13 +32,12 @@ if [ $HOME/code/suck ]; then
 	cd $HOME
 else
 	mkdir $HOME/code/suck/
-	cd $HOME/code/suck/
     echo -e " -- DOWNLOADING DWM -- \n"
-	git clone https://git.suckless.org/dwm
+	git clone https://git.suckless.org/dwm $HOME/code/suck/dwm/
     echo -e " -- DOWNLOADING ST -- \n"
-	git clone https://git.suckless.org/st
+	git clone https://git.suckless.org/st $HOME/code/suck/st/
     echo -e " -- DOWNLOADING DMENU -- \n"
-	git clone https://git.suckless.org/dmenu
+	git clone https://git.suckless.org/dmenu $HOME/code/suck/dmenu/
 	cd $HOME
 fi
 
@@ -66,7 +65,7 @@ DATADIR=$HOME/Documents/data/
 
 echo -e "\n CHECKING FOR BASH BUSINESS \n"
 if [ ! -f $HOME/.bashrc ]; then
-    echo " -- SET UP BASHRC -- \n"
+    echo " -- SETTING UP BASHRC -- \n"
     ln -s $HOME/code/etc/bashrc $HOME/.bashrc
 fi
 
@@ -82,26 +81,26 @@ fi
 
 echo -e "\n CHECKING SETTING UP SUCKLESS SUCKLESS CONFIGS \n"
 if [ ! -f $SUCKDIR/dwm/config.h ]; then
-	echo -e " -- SET UP DWM CONFIG -- \n"
+	echo -e " -- SETTING UP DWM CONFIG -- \n"
 	ln -s $HOME/code/etc/dwm.h $HOME/code/suck/dwm/config.h
 fi
 if [ ! -f $SUCKDIR/dmenu/config.h ]; then
-	echo -e " -- SET UP DMENU CONFIG -- \n"
+	echo -e " -- SETTING UP DMENU CONFIG -- \n"
 	ln -s $HOME/code/etc/dmenu.h $HOME/code/suck/dmenu/config.h
 fi
 if [ ! -f $SUCKDIR/st/config.h ]; then
-	echo -e " -- SET UP ST CONFIG -- \n"
+	echo -e " -- SETTING UP ST CONFIG -- \n"
 	ln -s $HOME/code/etc/st.h $HOME/code/suck/st/config.h
 fi
 
 echo -e "\n CHECKING TO SEE IF NEOVIM IS SET UP \n"
 if [ ! -d $HOME/.config/nvim ]; then
-	echo -e " -- SET UP NVIM LINK IN XDG_CONFIG_HOME -- \n"
+	echo -e " -- SETTING UP NVIM LINK IN XDG_CONFIG_HOME -- \n"
 	mkdir -p $HOME/.config/nvim
 	ln -s $HOME/code/etc/editor/init.vim $HOME/.config/nvim/init.vim
 else
 	if [ ! -f $HOME/.config/nvim/init.vim ]; then
-		echo -e " -- SET UP NVIM LINK IN XDG_CONFIG_HOME -- \n"
+		echo -e " -- SETTING UP NVIM LINK IN XDG_CONFIG_HOME -- \n"
 		ln -s $HOME/code/etc/editor/init.vim $HOME/.config/nvim/init.vim
 	fi
 fi
