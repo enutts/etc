@@ -5,7 +5,11 @@
 [ -f ~/.profile ] && . ~/.xprofile
 
 # Background for desktop
-feh --bg-scale /home/eric/code/etc/wallpaper.jpg
+if [ ! -f $HOME/.wallpaper ]; then
+    feh --bg-scale $HOME/code/etc/wallpaper.jpg
+else
+    feh --bh-scale $HOME/.wallpaper
+fi 
 
 # Some defaults
 export EDITOR=nvim
