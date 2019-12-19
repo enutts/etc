@@ -4,6 +4,4 @@
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-exec startx
-
 EDITOR="nvim"

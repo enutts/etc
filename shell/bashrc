@@ -16,6 +16,12 @@ shopt -s globstar
 # using lesspipe the ubuntu way
 [ -x /usr/bin/lesspipe ] && eval "$( SHELL=/bin/sh lesspipe)"
 
+# open tmux by default
+if [[ $DISPLAY ]]; then
+	[[ $- != *i* ]] && return
+	[[ -z "$TMUX" ]] && exec tmux
+fi
+
 # prompt... obviously
 PS1="\n \[\e[34m\][ \[\e[36m\]\u : \h : \W \[\e[34m\]] \n \[\e[36m\]\$ \[\e[00m\]"
 
