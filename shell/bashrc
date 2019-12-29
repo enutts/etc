@@ -28,6 +28,9 @@ PS1="\n \[\e[34m\][ \[\e[36m\]\u : \h : \W \[\e[34m\]] \n \[\e[36m\]\$ \[\e[00m\
 # adding custom scripts directory
 export PATH="${PATH}:$HOME/.scripts/"
 
+# adding path for julia
+export PATH="$PATH:$HOME/code/julia-1.3.0/bin"
+
 # useful exports
 export EDITOR="nvim"
 
