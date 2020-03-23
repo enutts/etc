@@ -4,7 +4,7 @@ cd ~
 
 echo -e "\n INSTALLING REQUIRED PACKAGES \n"
 sudo apt update && sudo apt upgrade -y 
-sudo apt install neovim curl git fzf 
+sudo apt install neovim curl git fzf tmux
 
 # create directory structure
 echo -e "\n CHECKING DIRECTORY STRUCTURE \n"
@@ -33,6 +33,7 @@ echo -e "\n CHECKING TO SEE IF NEOVIM IS SET UP \n"
 if [ ! -d $HOME/.config/nvim ]; then
 	echo -e " -- SETTING UP NVIM LINK IN XDG_CONFIG_HOME -- \n"
 	mkdir -p $HOME/.config/nvim
+	# this whole section is super ugly... i need to revisit this
 	ln -s $HOME/code/etc/init.viml$HOME/.config/nvim/init.vim
 	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 else
