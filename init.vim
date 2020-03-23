@@ -4,9 +4,6 @@ call plug#begin()
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-journal'
-Plug 'scrooloose/nerdtree'
-Plug 'majutsushi/tagbar'
-Plug 'vim-airline/vim-airline'
 call plug#end()
 
 " Colors and some quality of life
@@ -27,14 +24,6 @@ autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " journal
 autocmd FileType journal setlocal shiftwidth=2 tabstop=2 softtabstop=2
-
-" New to nerdtree...
-let NERDTreeShowHidden=1
-
-" Also new to Tagbar
-let g:tagbar_width=30
-
-" Reminder to fix Limelight... 
 
 " map time baby
 let mapleader=" "
