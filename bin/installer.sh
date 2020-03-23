@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 
-# "important directories"
-SCRIPTDIR=$HOME/.scripts/
-CODEDIR=$HOME/code/
-ETCDIR=$HOME/code/etc/
-BADDIR=$HOME/code/bad/
-
 cd ~
 
 echo -e "\n INSTALLING REQUIRED PACKAGES \n"
@@ -39,12 +33,12 @@ echo -e "\n CHECKING TO SEE IF NEOVIM IS SET UP \n"
 if [ ! -d $HOME/.config/nvim ]; then
 	echo -e " -- SETTING UP NVIM LINK IN XDG_CONFIG_HOME -- \n"
 	mkdir -p $HOME/.config/nvim
-	ln -s $HOME/code/etc/editor/init.viml$HOME/.config/nvim/init.vim
+	ln -s $HOME/code/etc/init.viml$HOME/.config/nvim/init.vim
 	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 else
 	if [ ! -f $HOME/.config/nvim/init.vim ]; then
 		echo -e " -- SETTING UP NVIM LINK IN XDG_CONFIG_HOME -- \n"
-		ln -s $HOME/code/etc/editor/init.vim $HOME/.config/nvim/init.vim
+		ln -s $HOME/code/etc/init.vim $HOME/.config/nvim/init.vim
 		curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	fi
 fi
