@@ -60,3 +60,4 @@ fi
 #fi
 
 
+eval "$(starship init bash)"

@@ -4,7 +4,8 @@ cd ~
 
 echo -e "\n INSTALLING REQUIRED PACKAGES \n"
 sudo apt update && sudo apt upgrade -y 
-sudo apt install neovim curl git fzf tmux
+# add support for ion-shell, starship
+sudo apt install neovim curl git fzf tmux kitty fonts-firacode
 
 # create directory structure
 echo -e "\n CHECKING DIRECTORY STRUCTURE \n"
@@ -43,3 +44,5 @@ else
 		curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	fi
 fi
+
+# add configs for ion, starship and kitty
