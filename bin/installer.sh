@@ -23,9 +23,22 @@ if [ ! -d $HOME/.scripts/ ]; then
     mkdir $HOME/.scripts
 fi
 
-echo -e "\n CHECKING FOR BASH BUSINESS \n"
-if [ ! -f $HOME/.bashrc_bak ]; then
-    echo -e " -- SETTING UP BASHRC -- \n"
+echo -e "\n SETTING UP KITTY \n"
+if [ ! -f $HOME/.config/kitty/kitty.conf ]; then
+    echo -e " -- SETTING UP KITTY -- \n"
+    mv $HOME/.bashrc $HOME/.bashrc_bak
+    ln -s $HOME/code/etc/bashrc $HOME/.bashrc
+fi
+
+echo -e "\n SETTING UP STARSHIP \n"
+if [ ! -f $HOME/.config/starship.toml ]; then
+    echo -e " -- SETTING UP STARSHIP -- \n"
+    echo eval "$(starship init bash)" >> $HOME/.bashrc
+fi
+
+echo -e "\n SETTING UP ION \n"
+if [ ! -f $HOME/.config/ion/initrc ]; then
+    echo -e " -- SETTING UP ION -- \n"
     mv $HOME/.bashrc $HOME/.bashrc_bak
     ln -s $HOME/code/etc/bashrc $HOME/.bashrc
 fi
@@ -46,3 +59,5 @@ else
 fi
 
 # add configs for ion, starship and kitty
+# eval eval $(/usr/local/bin/starship init ion --print-full-init)
+# export $PATH=$PATH:\$HOME\.cargo\bin

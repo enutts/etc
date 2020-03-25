@@ -1,0 +1,9 @@
+keybindings vi 
+
+# Correcting Path
+export PATH="~/.cargo/bin/:~/.scripts/:$PATH"
+export EDITOR="vim"
+
+alias ls = 'exa --color=auto'
+
+eval $(starship init ion)
