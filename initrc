@@ -3,6 +3,7 @@ keybindings vi
 # Correcting Path
 export PATH="~/.cargo/bin/:~/.scripts/:$PATH"
 export EDITOR="vim"
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 alias ls = 'exa --color=auto'
 
