@@ -5,6 +5,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-journal'
 Plug 'vmchale/ion-vim'
+Plug 'cespare/vim-toml'
 call plug#end()
 
 " Colors and some quality of life
