@@ -23,24 +23,23 @@ if [ ! -d $HOME/.scripts/ ]; then
     mkdir $HOME/.scripts
 fi
 
-echo -e "\n SETTING UP KITTY \n"
+echo -e "\n CHECKING FOR KITTY \n"
 if [ ! -f $HOME/.config/kitty/kitty.conf ]; then
     echo -e " -- SETTING UP KITTY -- \n"
-    mv $HOME/.bashrc $HOME/.bashrc_bak
-    ln -s $HOME/code/etc/bashrc $HOME/.bashrc
+    ln -s $HOME/code/etc/kitty.conf $HOME/.config/kitty/kitty.conf
 fi
 
-echo -e "\n SETTING UP STARSHIP \n"
-if [ ! -f $HOME/.config/starship.toml ]; then
+echo -e "\n CHECK FOR STARSHIP \n"
+if [ ! -f $HOME/.config/starship/starship.toml ]; then
     echo -e " -- SETTING UP STARSHIP -- \n"
     echo eval "$(starship init bash)" >> $HOME/.bashrc
+    ln -s $HOME/code/etc/starship.toml $HOME/.config/starship/starship.toml
 fi
 
-echo -e "\n SETTING UP ION \n"
+echo -e "\n CHECKING FOR ION \n"
 if [ ! -f $HOME/.config/ion/initrc ]; then
     echo -e " -- SETTING UP ION -- \n"
-    mv $HOME/.bashrc $HOME/.bashrc_bak
-    ln -s $HOME/code/etc/bashrc $HOME/.bashrc
+    ln -s $HOME/code/etc/initrc $HOME/.config/ion/initrc
 fi
 
 echo -e "\n CHECKING TO SEE IF NEOVIM IS SET UP \n"
