@@ -1,4 +1,5 @@
-" Nutts sorta ultimate sorta minimal NVim configuration
+" Nutts 
+" sorta minimal NVim configuration
 
 call plug#begin()
 Plug 'junegunn/goyo.vim'
@@ -6,6 +7,7 @@ Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-journal'
 Plug 'vmchale/ion-vim'
 Plug 'cespare/vim-toml'
+Plug 'fatih/vim-go'
 call plug#end()
 
 " Colors and some quality of life
@@ -29,13 +31,28 @@ autocmd FileType journal setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " map time baby
 let mapleader=" "
-nmap <leader>q :NERDTreeToggle<CR>
+
+" terminal
+nmap <leader>t :terminal<CR>
+tnoremap <Esc> <C-\><C-N>
+tnoremap <A-h> <C-\><C-N><C-w>h
+tnoremap <A-j> <C-\><C-N><C-w>j
+tnoremap <A-k> <C-\><C-N><C-w>k
+tnoremap <A-l> <C-\><C-N><C-w>l
+
+" insert
+inoremap <A-h> <C-\><C-N><C-w>h
+inoremap <A-j> <C-\><C-N><C-w>j
+inoremap <A-k> <C-\><C-N><C-w>k
+inoremap <A-l> <C-\><C-N><C-w>l
+
+
 nmap <leader><leader> :bprevious<CR>
-nmap \ <leader>q
-nmap <leader>w :TagbarToggle<CR>
-nmap <leader>g :Goyo<CR>
+
+" nmap \ <leader>q
+" nmap <leader>g :Goyo<CR>
 nmap <leader>n :noh<CR>
-map <C-h> <C-W>h
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-l> <C-W>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
