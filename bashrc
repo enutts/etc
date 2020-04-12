@@ -8,9 +8,8 @@ HISTFILESIZE=2000
 
 # windowsize stuff, might be outdated
 shopt -s checkwinsize
-
-# i want globstar
 shopt -s globstar
+shopt -s autocd
 
 # using lesspipe the ubuntu way
 [ -x /usr/bin/lesspipe ] && eval "$( SHELL=/bin/sh lesspipe)"
