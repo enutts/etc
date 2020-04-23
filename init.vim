@@ -1,5 +1,5 @@
 " Nutts 
-" sorta minimal NVim configuration
+" Minimal NVim Configuration
 
 call plug#begin()
 Plug 'junegunn/goyo.vim'
@@ -33,7 +33,6 @@ autocmd FileType journal setlocal shiftwidth=2 tabstop=2 softtabstop=2
 let mapleader=" "
 
 " terminal
-nmap <leader>t :terminal<CR>
 tnoremap <Esc> <C-\><C-N>
 tnoremap <A-h> <C-\><C-N><C-w>h
 tnoremap <A-j> <C-\><C-N><C-w>j
@@ -46,13 +45,17 @@ inoremap <A-j> <C-\><C-N><C-w>j
 inoremap <A-k> <C-\><C-N><C-w>k
 inoremap <A-l> <C-\><C-N><C-w>l
 
-
+" buffer control 
 nmap <leader><leader> :bprevious<CR>
 
 " nmap \ <leader>q
 " nmap <leader>g :Goyo<CR>
-nmap <leader>n :noh<CR>
+" normal mode 
 nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
-nnoremap <A-l> <C-w>l
+nnoremap <A-l> <C-w>lnmap <leader>n :noh<CR>
+
+" quality of life keys
+nmap <leader>t :terminal<CR>
+nmap <leader>d :vsplit term://bash<CR>
