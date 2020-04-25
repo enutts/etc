@@ -86,19 +86,19 @@ if [ ! -f $HOME/.config/ion/initrc ]; then
 fi
 
 
-echo -e "\n CHECKING TO SEE IF NEOVIM IS SET UP \n"
-if [ ! -d $HOME/.config/nvim ]; then
-	echo -e " -- SETTING UP NVIM LINK IN XDG_CONFIG_HOME -- \n"
-	mkdir -p $HOME/.config/nvim
-	# this whole section is super ugly... i need to revisit this
-	ln -s $HOME/code/etc/init.viml$HOME/.config/nvim/init.vim
-	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-else
-	if [ ! -f $HOME/.config/nvim/init.vim ]; then
-		echo -e " -- SETTING UP NVIM LINK IN XDG_CONFIG_HOME -- \n"
-		ln -s $HOME/code/etc/init.vim $HOME/.config/nvim/init.vim
-		curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	fi
+# Neovim
+echo -e "\n CHECKING FOR NEOVIM \n"
+if [ ! -f /usr/bin/nvim ]; then
+    echo -e "-- INSTALLING NEOVIM --\n" 
+    sudo apt install -y neovim
+fi
+echo -e "\n CHECKING FOR NVIM CONFIGS \n"
+if [ ! -f $HOME/.config/nvim/init.vim ]; then
+    echo -e " -- SETTING UP NVIM --\n"
+    mkdir -p $HOME/.config/nvim
+    ln -s $HOME/code/etc/init.vim $HOME/.config/nvim/init.vim
+    curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
-# export $PATH=$PATH:\$HOME\.cargo\bin
+
+# 
