@@ -4,8 +4,6 @@
 # Step two after getting this working and nailing my configs is to create 3 different installs
 # Minimal/Server/Complete where different standard packages are installed for each one
 
-# 
-
 cd ~
 
 echo -e "\n INSTALLING REQUIRED PACKAGES \n"
