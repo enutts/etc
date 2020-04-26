@@ -45,7 +45,8 @@ fi
 echo -e "\n CHECKING FOR STARSHIP CONFIGS \n"
 if [ ! -e $HOME/.config/starship/starship.toml ]; then
     echo -e " -- CONFIGURING STARSHIP -- \n"
-    ln -s $HOME/code/etc/starship.toml $HOME/.config/starship/starship.toml
+    mkdir -p $HOME/.config/starship
+    ln -s $HOME/code/etc/shell/starship.toml $HOME/.config/starship/starship.toml
 fi
 
 
@@ -72,7 +73,8 @@ fi
 echo -e "\n CHECKING FOR ION \n"
 if [ ! -e $HOME/.config/ion/initrc ]; then
     echo -e " -- SETTING UP ION -- \n"
-    ln -s $HOME/code/etc/initrc $HOME/.config/ion/initrc
+    mkdir -p $HOME/.config/ion/
+    ln -s $HOME/code/etc/shell/initrc $HOME/.config/ion/initrc
 fi
 
 
@@ -89,3 +91,16 @@ if [ ! -e $HOME/.config/nvim/init.vim ]; then
     ln -s $HOME/code/etc/init.vim $HOME/.config/nvim/init.vim
     curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi 
+
+
+# Tmux
+echo -e "\n CHECKING FOR TMUX \n"
+if [ ! -e /usr/bin/tmux ]; then
+    echo -e " -- INSTALLING TMUX -- \n"
+    sudo apt install tmux -y
+fi
+echo -e "\n CHECKING FOR TMUX CONFIG \n"
+if [ ! -e $HOME/.tmux.conf ]; then
+    echo -e " -- CONFIGURING tmux -- \n"
+    ln -s $HOME/code/etc/terminal/tmux.conf $HOME/.tmux.conf
+fi
