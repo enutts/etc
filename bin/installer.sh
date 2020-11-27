@@ -8,10 +8,8 @@ cd ~
 
 echo -e "\n INSTALLING REQUIRED PACKAGES \n"
 sudo apt update && sudo apt upgrade -y 
-# add support for ion-shell, starship
-sudo add-apt-repository ppa:mmstick76/ion-shell
-sudo apt install neovim curl fzf tmux alacritty ion
-
+# add support for starship
+sudo apt install neovim curl fzf tmux alacritty zsh
 
 # create directory structure
 # as elegant as they come... i hope
@@ -48,35 +46,6 @@ if [ ! -e $HOME/.config/starship/starship.toml ]; then
     mkdir -p $HOME/.config/starship
     ln -s $HOME/code/etc/shell/starship.toml $HOME/.config/starship/starship.toml
 fi
-
-
-# Fish
-echo -e "\n CHECKING FOR FISH \n"
-if [ ! -e /usr/bin/fish ]; then
-    echo -e " -- INSTALLING STARSHIP -- \n"
-    sudo apt install fish -y 
-fi
-echo -e "\n CHECKING FOR FISH CONFIGS \n"
-if [ ! -e $HOME/.config/fish/config.fish ]; then
-    echo -e " -- CONFIGURING FISH -- \n"
-    ln -s $HOME/code/etc/config.fish $HOME/.config/fish/config.fish
-fi
-
-
-# Ion
-echo -e "\n CHECKING FOR ION \n"
-if [ ! -e /usr/bin/fish ]; then
-    echo -e " -- INSTALLING ION -- \n"
-    sudo add-apt-repository ppa:mmstick76/ion-shell
-    sudo apt install ion-shell -y 
-fi
-echo -e "\n CHECKING FOR ION \n"
-if [ ! -e $HOME/.config/ion/initrc ]; then
-    echo -e " -- SETTING UP ION -- \n"
-    mkdir -p $HOME/.config/ion/
-    ln -s $HOME/code/etc/shell/initrc $HOME/.config/ion/initrc
-fi
-
 
 # Neovim
 echo -e "\n CHECKING FOR NEOVIM \n"

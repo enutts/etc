@@ -1,0 +1,7 @@
+#!/usr/bin/sh
+
+# may be a better way to do this
+
+echo '#!/usr/bin/sh' > ~/.scripts/$1
+chmod 754 ~/.scripts/$1
+nvim ~/.scripts/$1

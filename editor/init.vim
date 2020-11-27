@@ -1,13 +1,13 @@
 " Nutts 
-" Minimal NVim Configuration
+" Minimal (but growing) NVim Configuration
 
 call plug#begin()
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-journal'
-Plug 'dag/vim-fish'
-Plug 'vmchale/ion-vim'
 Plug 'cespare/vim-toml'
+Plug 'keith/swift.vim'
+" Plug 'dense-analysis/ale'
 call plug#end()
 
 " Colors and some quality of life
@@ -17,23 +17,35 @@ set number relativenumber
 set splitright
 set splitbelow
 filetype plugin indent on
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab smarttab autoindent
+set tabstop=4 softtabstop=4 shiftwidth=4 smarttab expandtab
 set incsearch ignorecase smartcase hlsearch
 set ruler laststatus=2 showcmd showmode
 set wrap breakindent
 set encoding=utf-8
 
-" fix fish shell stuff
-" honestly not sure this applies to nvim
-if &shell =~# 'fish$'
-    set shell=bash
-endif
+" trying out folding
+
+" python 
+au FileType py 
+    \ setlocal autoindent 
+    \ setlocal expandtab
+"    NOTE TO SELF: folding is annoying if done wrong
+"    \ setlocal foldmethod=indent
+    \ setlocal foldlevel=99
 
 " html
-autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+au FileType html
+    \ setlocal shiftwidth=2 
+    \ setlocal tabstop=2
+    \ setlocal softtabstop=2
+    \ setlocal autoindent
 
 " journal
-autocmd FileType journal setlocal shiftwidth=2 tabstop=2 softtabstop=2
+au FileType journal 
+    \ setlocal shiftwidth=2
+    \ setlocal tabstop=2 
+    \ setlocal softtabstop=2 
+    \ setlocal autoindent
 
 " map time baby
 let mapleader=" "
@@ -60,7 +72,9 @@ nmap <leader><leader> :bprevious<CR>
 nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
-nnoremap <A-l> <C-w>lnmap <leader>n :noh<CR>
+nnoremap <A-l> <C-w>l
+nmap <leader>n :noh<CR>
+nnoremap <leader>f za
 
 " quality of life keys
 nmap <leader>t :terminal<CR>

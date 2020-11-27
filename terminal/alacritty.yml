@@ -1,13 +1,13 @@
 # Fonts
 font:
   normal:
-    family: fira mono
+    family: fira code
   bold:
-    family: fira mono
+    family: fira code
   italic:
-    family: fira mono
+    family: fira code
   bold_italic:
-      family: fira mono 
+      family: fira code
   size: 12.0
 
 # Base16 Atelier Plateau 256 - alacritty color config
