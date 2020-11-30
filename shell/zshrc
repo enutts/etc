@@ -1,0 +1,13 @@
+# because im super lazy
+alias exa="exa --colour=always"
+alias ls="exa"
+alias ll="exa -alF"
+alias la="exa -a"
+alias lr="exa -Rl --level=2"
+alias py="python3"
+
+# programming languages
+export PATH=/usr/share/swift/usr/bin:/home/nutts/.cargo/bin:/home/nutts/.scripts/:$PATH
+
+# because i dont want to write my own prompt
+eval "$(starship init zsh)"

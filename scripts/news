@@ -2,6 +2,7 @@
 
 # may be a better way to do this
 
-echo '#!/usr/bin/sh' > ~/.scripts/$1
-chmod 754 ~/.scripts/$1
-nvim ~/.scripts/$1
+echo '#!/usr/bin/sh' > ~/code/etc/scripts/$1
+chmod 754 ~/code/etc/scripts/$1
+ln -s ~/code/etc/scripts/$1 ~/.scripts/$1
+nvim ~/code/etc/scripts/$1
