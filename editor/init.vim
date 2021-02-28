@@ -2,16 +2,31 @@
 " Minimal (but growing) NVim Configuration
 
 call plug#begin()
+" junegunn
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-journal'
+
+" For Rust Stuff
 Plug 'cespare/vim-toml'
-Plug 'keith/swift.vim'
-" Plug 'dense-analysis/ale'
+
+" UI
+Plug 'chriskempson/base16-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " Colors and some quality of life
 syntax on
+syntax enable
+
+let base16colorspace=256
+colorscheme base16-tomorrow-night
+
+if has("termguicolors")
+    set termguicolors
+endif
+
 set title
 set number relativenumber
 set splitright
@@ -22,6 +37,11 @@ set incsearch ignorecase smartcase hlsearch
 set ruler laststatus=2 showcmd showmode
 set wrap breakindent
 set encoding=utf-8
+
+" backups
+set nobackup
+set noswapfile
+set nowritebackup
 
 " trying out folding
 
@@ -79,3 +99,10 @@ nnoremap <leader>f za
 " quality of life keys
 nmap <leader>t :terminal<CR>
 nmap <leader>d :vsplit term://bash<CR>
+
+" Airline
+let g:airline_left_sep  = ''
+let g:airline_right_sep = ''
+let g:airline#extensions#ale#enabled = 1
+let airline#extensions#ale#error_symbol = 'E:'
+let airline#extensions#ale#warning_symbol = 'W:'
